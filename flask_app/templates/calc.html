@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chemical Balancer</title>
+    <script src={{url_for('static', filename='logic.js')}}></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="content_area">
+        <h1>Chemical Formula Balancer</h1>
+        <h4>I knew I could do it :)</h4>
+        <hr>
+        <div class="row_wrapper" id="statements_input_wrapper">
+            <input type="text" id="left_side" class="statement_input" oninput="inputEvent(this.value, true, this)">
+            <span>&rarr;</span>
+            <input type="text" id="right_side" class="statement_input" oninput="inputEvent(this.value, false, this)"">
+        </div>
+
+        <div class="row_wrapper" id="statements_preview_wrapper">
+            <span class="statement_preview" id="left_preview"></span>
+            <span>&rarr;</span>
+            <span class="statement_preview" id="right_preview"></span>
+        </div>
+        <button onclick="ExecuteBalance()">Balance Formula</button>
+    </div>
+    <div class="content_area" id="answer_area">
+        <h2 id="balanced_formula"></h2>
+    </div>
+</body>
+</html>
